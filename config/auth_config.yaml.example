@@ -1,0 +1,37 @@
+# Authentication Configuration Template for CLIP Vector Search
+#
+# SETUP INSTRUCTIONS:
+# 1. Copy this file to 'auth_config.yaml' in the same directory
+# 2. Generate password hashes: python src/generate_password_hash.py
+# 3. Generate a random cookie key: python -c "import secrets; print(secrets.token_hex(32))"
+# 4. Replace the placeholder values below with your actual credentials
+#
+# SECURITY WARNING:
+# - Never commit auth_config.yaml to version control
+# - auth_config.yaml is already in .gitignore
+# - Only share hashed passwords, never plain text passwords
+
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Admin User
+      password: <PASTE_BCRYPT_HASH_HERE>
+      # Generate hash with: python src/generate_password_hash.py
+
+    user1:
+      email: user1@example.com
+      name: User One
+      password: <PASTE_BCRYPT_HASH_HERE>
+      # Generate hash with: python src/generate_password_hash.py
+
+    # Add more users as needed (up to 10 users recommended)
+    # user2:
+    #   email: user2@example.com
+    #   name: User Two
+    #   password: <PASTE_BCRYPT_HASH_HERE>
+
+cookie:
+  expiry_days: 30  # Session expires after 30 days of inactivity
+  key: <PASTE_RANDOM_KEY_HERE>  # Generate with: python -c "import secrets; print(secrets.token_hex(32))"
+  name: vector_search_auth_cookie  # Cookie name (can leave as-is)

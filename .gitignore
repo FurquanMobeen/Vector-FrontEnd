@@ -1,0 +1,12 @@
+__pycache__
+.claude
+.venv
+
+
+
+# Frontend
+frontend/config/auth_config.yaml
+frontend/config/*.yaml
+!frontend/config/*.yaml.example
+frontend/embedded_data/
+frontend/data/

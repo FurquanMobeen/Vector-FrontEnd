@@ -1,0 +1,149 @@
+/* ============================================
+   MODERN DARK THEME - Purple/Pink Accents
+   ============================================ */
+/* Main background */
+.stApp {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+/* Sidebar styling */
+[data-testid=stSidebar] {
+  background-color: #1a1a1a;
+  border-right: 1px solid #2a2a2a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Hide Streamlit's default navigation */
+[data-testid=stSidebarNav] {
+  display: none;
+}
+
+/* Navigation links */
+a[data-testid=stPageLink-NavLink] {
+  color: #b8b8b8;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+a[data-testid=stPageLink-NavLink]:hover {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+a[data-testid=stPageLink-NavLink][aria-current=page] {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+}
+
+/* Buttons - Glassy Effect */
+button[kind=primary],
+button[kind=secondary] {
+  background: rgba(168, 85, 247, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+button[kind=primary]:hover,
+button[kind=secondary]:hover {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.15);
+  transform: translateY(-1px);
+}
+button[kind=primary]:active,
+button[kind=secondary]:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(168, 85, 247, 0.1);
+}
+
+/* Input fields */
+input, textarea, select {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+/* Metric containers */
+[data-testid=stMetricValue] {
+  color: #a855f7;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Code blocks */
+code {
+  background-color: #1a1a1a;
+  color: #ec4899;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Info/warning boxes */
+[data-testid=stAlert] {
+  background-color: #1a1a1a;
+  border-left: 4px solid #a855f7;
+  border-radius: 8px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  scroll-behavior: smooth;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.page-title {
+  text-align: center;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Footer styling */
+footer {
+  text-align: left;
+  padding: 10px;
+  background-color: inherit;
+  color: #b8b8b8;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* Spinner */
+[data-testid=stSpinner] > div {
+  border-color: #a855f7 transparent transparent transparent;
+}
+
+/* Center images */
+[data-testid=stImage] {
+  display: flex;
+  justify-content: center;
+}
+[data-testid=stImage] img {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=styles.css.map */

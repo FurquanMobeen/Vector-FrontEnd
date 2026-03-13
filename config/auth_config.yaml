@@ -1,0 +1,19 @@
+# Authentication Configuration for CLIP Vector Search
+# Generated on 2026-03-12
+
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Admin User
+      password: $2b$12$S9DHbq59absaTSuSvUdfWOR.rOKcmQPt/zOTnEWyEv2MuxsVDiZ82  # Password: admin123
+
+    user1:
+      email: user1@example.com
+      name: User One
+      password: $2b$12$ffsrZCh8zwKsv/yDM9jHReja1Ki8o1GzuNmLCGS.QkvyvjoiXfgqW  # Password: user123
+
+cookie:
+  expiry_days: 30
+  key: 3dd314e58d9654853ca6ee86ce8d8c32873a859d0cfb869df37f47e53bd56d27
+  name: vector_search_auth_cookie

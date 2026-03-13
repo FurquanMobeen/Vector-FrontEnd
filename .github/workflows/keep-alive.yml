@@ -1,0 +1,45 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    # Run every 6 hours (at 00:00, 06:00, 12:00, and 18:00 UTC)
+    # Adjust the schedule based on your needs (max once every 5 minutes on free tier)
+    - cron: '0 */6 * * *'
+
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Run keep-alive script
+        env:
+          STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL }}
+        run: |
+          python .github/keep_alive.py
+
+      - name: Upload screenshot (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: streamlit-screenshot-${{ github.run_number }}
+          path: streamlit_app_screenshot.png
+          retention-days: 7
+          if-no-files-found: ignore
