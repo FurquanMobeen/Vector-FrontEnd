@@ -10,3 +10,19 @@ frontend/config/*.yaml
 !frontend/config/*.yaml.example
 frontend/embedded_data/
 frontend/data/
+node_modules
+
+# Next.js
+/.next/
+/out/
+/build/
+next-env.d.ts
+
+# TypeScript
+*.tsbuildinfo
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
